@@ -1,47 +1,47 @@
-# EX 19 C program to perform basic left and right shift operations on a given integer and display the result.
+# EX 20 C program to convert the given string to lowercase without using string functions.
 ## DATE: 21-05-2025
 ## AIM:
-To write a C program to perform basic left and right shift operations on a given integer and display the result.
+To write a C program to convert the given string to lowercase without using string functions.
 
 ## Algorithm
 1.Start the program. 
-2.Read an integer and the number of positions to shift.
-3.Perform left shift (<<) on the integer by the given positions. 
-4.Perform right shift (>>) on the integer by the given positions.
-5.Display the results and end the program.    
+2.Read the input string from the user.
+3.Traverse each character of the string until the null terminator is reached.
+4.If the character is uppercase (between 'A' and 'Z'), convert it to lowercase by adding 32.
+5.Print the converted string and end the program. 
 
 ## Program:
 ```
 /*
-C program to perform basic left and right shift operations on a given integer and display the result.
-Developed by: Roghith K
+C program to convert the given string to lowercase without using string functions.
+Developed by: Roghith k
 RegisterNumber: 212222040135
 */
 
 #include <stdio.h>
 
 int main() {
-    int num, shift;
-    int leftShift, rightShift;
+    char str[1000];
+    int i = 0;
 
-    printf("Enter an integer: ");
-    scanf("%d", &num);
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
 
-    printf("Enter number of positions to shift: ");
-    scanf("%d", &shift);
+    while(str[i] != '\0') {
+        if(str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;  // Convert uppercase to lowercase
+        }
+        i++;
+    }
 
-    leftShift = num << shift;
-    rightShift = num >> shift;
-
-    printf("Result after left shift by %d positions: %d\n", shift, leftShift);
-    printf("Result after right shift by %d positions: %d\n", shift, rightShift);
+    printf("Lowercase string: %s", str);
 
     return 0;
 }
 ```
 
 ## Output:
-![444994691-661ee331-3fac-4c14-9922-8003f824b3e2](https://github.com/user-attachments/assets/2f5d786e-1969-4bc6-9f1c-ce99b28377c3)
+![444995632-ac948b07-4ed3-483e-abf0-4d7873201327](https://github.com/user-attachments/assets/dff8eac2-ba53-4c41-97fa-eb368d8e59eb)
 
 
 
